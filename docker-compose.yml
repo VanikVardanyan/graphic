@@ -1,0 +1,18 @@
+version: '3'
+
+services:
+  front:
+    build: front/
+    restart: always
+    stdin_open: true
+    logging:
+      driver: 'none'
+    ports:
+      - '3000:3000'
+  back:
+    build: back/
+    stdin_open: true
+    ports:
+      - '8080:8080'
+    logging:
+      driver: 'none'
